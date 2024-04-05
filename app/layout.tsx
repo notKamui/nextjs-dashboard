@@ -1,3 +1,4 @@
+import NextTopLoader from 'nextjs-toploader'
 import { inter } from "@/app/ui/fonts";
 import "@/app/ui/global.css";
 import { ReactNode } from 'react'
@@ -8,7 +9,7 @@ export const metadata = {
     default: 'Acme Dashboard',
   },
   description: 'The official Next.js Course Dashboard, built with App Router',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh')
+  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
 };
 
 export default function RootLayout({
@@ -18,7 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+    <body className={`${inter.className} antialiased`}>
+      <NextTopLoader />
+      {children}
+    </body>
     </html>
   );
 }
